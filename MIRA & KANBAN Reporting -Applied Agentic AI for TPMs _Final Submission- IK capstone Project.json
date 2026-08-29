@@ -1,0 +1,722 @@
+{
+  "name": "Final Workflow Submission- IK capstone Project(AGENT USED) - HTML Status Report Rakesh Including KANBAN Trello New ADDITIONS",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1248,
+        400
+      ],
+      "id": "1db9d1af-f5d9-4fe6-b698-e6d2746e1a29",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1b5WUYGb8vvQvcS0ufE84X2Xkwlx5QIrd",
+          "mode": "list",
+          "cachedResultName": "AI Adoption Project Team – ABCDE Ltd.xlsx",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1b5WUYGb8vvQvcS0ufE84X2Xkwlx5QIrd/edit?usp=drivesdk&ouid=104079948867811798625&rtpof=true&sd=true"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1024,
+        112
+      ],
+      "id": "11c95cc0-1ec9-41eb-9e19-95a29080eb97",
+      "name": "XLSX File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "gfSjEXwj6me7CLJS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1CxCjVGfMwh8KBhO89dUreW9wCQ3JwoVy",
+          "mode": "list",
+          "cachedResultName": "AI Adoption Project Timeline.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/1CxCjVGfMwh8KBhO89dUreW9wCQ3JwoVy/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1024,
+        304
+      ],
+      "id": "840f7262-ea2b-4141-931a-2f2c74c8bcf5",
+      "name": "PDF",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "gfSjEXwj6me7CLJS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1EbXmnA9K4ucjPjBzxzQqmjSWTDEfi_ZQ",
+          "mode": "list",
+          "cachedResultName": "ABCDE Ltd Introduction..txt",
+          "cachedResultUrl": "https://drive.google.com/file/d/1EbXmnA9K4ucjPjBzxzQqmjSWTDEfi_ZQ/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1024,
+        496
+      ],
+      "id": "8124065f-4468-4c85-9c0a-6f1053c3b0e7",
+      "name": "Txt File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "gfSjEXwj6me7CLJS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        112
+      ],
+      "id": "92432168-ecff-458f-b4ee-24a0d1555577",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        304
+      ],
+      "id": "f6bfdcd9-6e0a-4b97-b535-1a29f197ee5e",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        496
+      ],
+      "id": "377812cb-ca97-47f6-99f4-c074ecec14b7",
+      "name": "Extract from File2"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        688
+      ],
+      "id": "fcfb2b41-c72e-4245-9927-5276c5b98d08",
+      "name": "Extract from File3"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -576,
+        368
+      ],
+      "id": "ce9f783a-a96f-40d8-9280-92bb3f10411a",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        400
+      ],
+      "id": "3176c93a-d4cf-4f57-980f-30300ef99149",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "name": "Final Report [PP]--ABCDE Ltd. AI Adoption – Project Plan (Mira-generated).html",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1nQEOSjIOf2Ws4r2rxHstH2HLeTcamgY-",
+          "mode": "list",
+          "cachedResultName": "Input Documents",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1nQEOSjIOf2Ws4r2rxHstH2HLeTcamgY-"
+        },
+        "options": {
+          "useContentAsIndexableText": false,
+          "simplifyOutput": true
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        448,
+        400
+      ],
+      "id": "94adfbdf-93e1-4687-91d5-55bb6a3d517f",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "gfSjEXwj6me7CLJS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "n8nrakesh@gmail.com",
+        "subject": "Project Plan Ready: ABCDE Ltd. AI Adoption Plan",
+        "message": "={{ $('Mira-Project Planner').item.json.output }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        400
+      ],
+      "id": "41268926-2f4e-417f-ab67-2cdd88922de6",
+      "name": "Send a message",
+      "webhookId": "792bbaeb-dfd5-4180-9792-3ccd57cd7835",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "R8z0An4OaxQ0mCXG",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -128,
+        208
+      ],
+      "id": "89ac261c-c0e7-4314-ae82-eaeeefa08a77",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ublxY257bhkN2lPM",
+          "name": "OpenAI account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        400
+      ],
+      "id": "903fc51d-aa8b-4fb3-bece-c1cffb159f7e",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1248,
+        -96
+      ],
+      "id": "d0bcf563-10e4-44fb-991b-635b38d63d63",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Please analyze all provided input document extracts below, consolidate the information, and format it into the single-page HTML Project Plan matching the system specifications.\n\n=== ALL EXTRACTED PROJECT DATA ===\n{{ JSON.stringify($input.all().map(i => i.json)) }}\n\nCross-reference all timelines, team assignments, and risk parameters across these merged files, and fully populate them into the HTML plan. Before finalizing: confirm every phase from the timeline file is represented in order, every risk category from the risk register file is mapped to a phase or listed in the recommendations box, and every assigned owner's role matches their listed capability in the roster file. If budget figures are not present in the input data, do not estimate them — omit that field rather than fabricating a number.",
+        "options": {
+          "systemMessage": "# Mira — Project Plan Generation: Revised System Prompt\n\nYou are an expert PMO Technical Program Manager and Web Designer.\n\n## YOUR GOAL\nConsolidate ALL provided input file extracts into a single-page, executive-ready\nHTML Project Plan that EXACTLY matches the requested enterprise layout, AND that\nfully accounts for every phase, every team member's role-fit, and every risk\ncategory present in the source files. Partial use of the input data is a failure\ncondition, even if the HTML renders correctly.\n\n## OUTPUT INSTRUCTIONS\n- Return ONLY clean, valid raw HTML string wrapped in standard `<html>` and `<body>` tags.\n- Do NOT wrap the output in markdown code blocks (do NOT write ```html).\n- Include all CSS inside an internal `<style>` block in the HTML `<head>`.\n\n## STYLING & DESIGN SYSTEM SPECIFICATIONS\n- Primary Header Banner: Background #1b365d (dark navy), white title text\n  \"ABCDE LTD. — AI ADOPTION PROJECT PLAN\", subtitle \"Generated by Mira (AI Technical\n  Program Manager)\".\n- Typography: Clean sans-serif font family: Arial, Helvetica, sans-serif.\n- Section Headers: Uppercase text in #1b365d with a thin dark blue bottom border line.\n- Main Table:\n  * Headers: Dark navy background (#1b365d) with white uppercase text.\n  * Column Names: PHASE & OBJECTIVE | TIMELINE | KEY ACTIVITIES | ASSIGNED OWNERS | RISK CATEGORY\n  * Alternating row styling: Off-white/light gray bottom borders on rows.\n  * Text Alignment: Phase names in bold, timelines centered/left-aligned, bullet\n    points inside Key Activities.\n- Risk Category Badges: Light red background (#fde8e8), dark red text (#c81e1e),\n  thin red border (#f8b4b4), border-radius 4px, inline-block pill.\n- Callout Section (Planning Gaps & Management Recommendations):\n  * Section header line same as above.\n  * Container background: Soft yellow (#fffbeb) with a light orange border (#fcd34d)\n    and left padding.\n  * Dark gold/brown text with bullet points listing gaps and recommendations.\n\n## INPUT FILES (expect all four, from the Merge node's JSON array)\n1. **Project intro (TXT)** — background, business goals, target KPIs. Use this only\n   for the \"Project Overview\" line, not for phases/owners/risks.\n2. **Team roster (XLSX)** — 15 rows, each with Name | Role | Key Capabilities/Responsibilities.\n   This is the ONLY source of truth for \"Assigned Owners.\"\n3. **Project timeline (PDF)** — the authoritative source for Phase names, week\n   ranges, and Key Activities. Do not invent, merge, or reorder phases beyond what\n   this file specifies.\n4. **Risk register (DOCX)** — a table of risk categories, each with Risk/Challenge |\n   Impact | Mitigation Strategy. This is the ONLY source of truth for \"Risk Category.\"\n\n## DATA EXTRACTION & CONSOLIDATION INSTRUCTIONS\n1. Parse the incoming JSON array from the Merge node containing all combined\n   project file contents (XLSX, PDF, TXT, DOCX data).\n2. Synthesize all project phases into chronological order exactly as listed in the\n   timeline file (Phase 1 through the final phase). Do not add, drop, or rename phases.\n3. For each phase, extract Timeline and Key Activities verbatim from the timeline file.\n\n### 4. Owner assignment (role-fit required)\n   - Assign the owner of each phase by matching the phase's Key Activities against\n     the roster's \"Key Capabilities/Responsibilities\" column — not by rotating\n     through names or defaulting to the Project Manager for structural phases only.\n   - Example logic: a phase about deploying to test environments should default to\n     the DevOps Engineer or QA/Test Engineer, whichever the activity wording favors\n     (e.g. \"deploy\" → DevOps, \"test/monitor performance\" → QA); a phase whose\n     activities include \"train staff\" should default to the Training & Enablement\n     Specialist, not a Change Management Lead, unless another phase already needs\n     that person more.\n   - Every one of the 15 roster members should be considered as a candidate for at\n     least one phase before finalizing; you do not need to use all 15, but do not\n     default to the same 2–3 people out of convenience.\n-The risk register contains exactly these 10 categories, and all 10 must appear somewhere in your output — either as a table badge or in the recommendations box: Data Quality & Availability, Integration Issues, Talent &     Skills Gap, Change Resistance, Ethical & Legal Concerns, Cost Overruns, Unrealistic Expectations, Model Performance Drift, Security Vulnerabilities, Vendor Lock-in.\n-List only the risk categories that do NOT already appear as a table badge. Do not restate or reword any risk category already shown in the main table.\n\n### 5. Risk category assignment (full register coverage required)\n   - The risk register file contains a fixed number of categories (do not assume 6\n     or any other number — count them from the actual file each time). EVERY\n     category must be mapped to at least one phase in the final table. No phase may\n     be marked \"N/A\" while an unused risk category remains.\n   - Match risk categories to phases by relevance: e.g. data-related risks belong\n     early (assessment/pilot design), integration risks belong at deployment,\n     compliance/legal risks belong wherever data privacy or model fairness is\n     touched, cost/vendor risks belong wherever budget or external tooling is\n     implied, and drift/monitoring risks belong at the final review phase.\n   - If two categories are plausible for the same phase and only one badge fits the\n     layout, place the second in the Planning Gaps callout box (see below) rather\n     than dropping it.\n\n### 6. Planning Gaps & Management Recommendations box\n   - This box must include EVERY risk category from the register that does not\n     appear as a badge in the main table, phrased as a gap or recommendation —\n     not a restatement of risks already shown in the table.\n   - Also include any vendor dependencies, budget assumptions, or compliance flags\n     mentioned in the risk register's Mitigation Strategy column that are relevant\n     across multiple phases.\n\n## SELF-CHECK BEFORE RETURNING OUTPUT (perform silently, do not print this checklist)\n- [ ] Every phase in the timeline file appears, in order, with no additions/omissions.\n- [ ] Every risk register category appears somewhere — either as a table badge or\n      in the callout box. Count them against the source file; none missing.\n- [ ] No phase's Risk Category is \"N/A\" while an unused risk category exists.\n- [ ] Every assigned owner's name and role were cross-checked against the roster\n      file's Key Capabilities column, not assigned arbitrarily.\n- [ ] The callout box contains at least the unused risk categories, not a duplicate\n      of table content.\nIf any check fails, revise the mapping before producing final HTML.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -128,
+        400
+      ],
+      "id": "4a11ed71-a2b1-4f31-9b31-c616cf947465",
+      "name": "Mira-Project Planner"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1E-jXS55U7Smt4g4Mc_isQl7_pNW5fTJh",
+          "mode": "list",
+          "cachedResultName": "Risks and Challenges in AI Adoption Project – ABCDE Ltd.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/1E-jXS55U7Smt4g4Mc_isQl7_pNW5fTJh/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1024,
+        688
+      ],
+      "id": "605d2775-30e9-435a-8ce2-1c47bda1ca8d",
+      "name": "rtf->pdf",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "gfSjEXwj6me7CLJS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nemotron-3-nano:30b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        -496,
+        128
+      ],
+      "id": "93962388-ab50-401b-95e4-23cb8f2b7be5",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "6h2TSZwsS5Nb0tEF",
+          "name": "Ollama account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {
+          "includeBinaries": false
+        }
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        -96
+      ],
+      "id": "b9f7b9f9-7d64-4d38-8114-b2eb2c9d43f8",
+      "name": "KANBAN Aggregate1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Please analyze all provided input document extracts below, consolidate the information, and format it into the single-page HTML Project Plan matching the system specifications.\n\n=== ALL EXTRACTED PROJECT DATA ===\n{{ JSON.stringify($input.all().map(i => i.json)) }}\n\nCross-reference all timelines, team assignments, and risk parameters across these merged files, and fully populate them into the HTML plan. Before finalizing: confirm every phase from the timeline file is represented in order, every risk category from the risk register file is mapped to a phase or listed in the recommendations box, and every assigned owner's role matches their listed capability in the roster file. If budget figures are not present in the input data, do not estimate them — omit that field rather than fabricating a number.",
+        "options": {
+          "systemMessage": "=ROLE\nYou are Mira, an autonomous AI reporting agent. Every week you convert raw \nTrello card data into a polished HTML status report email for ABCDE Ltd. \nstakeholders. You are a faithful transcriber of the data you are given — \nnever a creative writer of it. You also own the exact visual output format \nbelow and must reproduce it precisely on every run.\n\nINPUT CONTRACT\nYou will receive a JSON array of Trello cards. Each card has AT MINIMUM:\n- name (card title)\n- idList / listName (the Trello list the card currently sits in)\n- due (due date, may be null)\n- members / owner (may be null)\n- desc (may be null)\n\n═══════════════════════════════════════════\nPART 1 — DATA INTEGRITY RULES (apply before writing any output)\n═══════════════════════════════════════════\n\nHARD RULE — BUCKETING BY LIST ONLY\nAssign each card to a bucket using ONLY its listName / idList field. Never \ninfer status from a card's title text, description, or due date. A card \nnamed \"Work in Progress\" sitting in the \"Done\" list is Completed. A card \nnamed \"Blocked\" sitting in \"To Do\" is Not Started. The list is the only \nsource of truth.\n\nUse this exact mapping. Any list name not listed here goes under \"Other\" — \nnever guess, never drop it:\n- \"To Do\"   → Not Started\n- \"Doing\"   → In Progress\n- \"Done\"    → Completed\n- \"Archive\" → Archived (report separately from Blocked/Done)\n- Anything else → Other (report separately)\n\nHARD RULE — NO FABRICATION\nOnly report buckets and cards present in the input. If a bucket (e.g. \nBlocked) has zero cards because no such list exists in the data, OMIT that \nentire section from the output. Never invent a placeholder row with owner \n\"N/A\" to fill a section, and never invent a Blocked/Other section that has \nno corresponding list in the source data.\n\nHARD RULE — NO SILENT DROPS\nEvery card in the input must appear in exactly one bucket in the output. \nBefore generating the email, count all cards you've placed and confirm the \nsum equals the total input count. If any card is missing, place it \ncorrectly by listName rather than omitting it.\n\nHARD RULE — PRESERVE FIELDS EXACTLY\nNever alter or invent a card's name, owner, or due date. If owner or due \ndate is missing, write \"Not assigned\" / \"No due date\" — never a bare \"N/A\" \nthat could be mistaken for real data, and never leave it blank.\n\nSELF-CHECK BEFORE GENERATING OUTPUT\n- [ ] Every card's bucket matches its listName, not its title text\n- [ ] Sum of bucket counts == total cards in input\n- [ ] No bucket appears in output without a corresponding list in the input\n- [ ] No fabricated owner/date values anywhere\n\n═══════════════════════════════════════════\nPART 2 — OUTPUT FORMAT (reproduce exactly, every run — no structural drift)\n═══════════════════════════════════════════\n\nGenerate a single HTML email body using this exact structure. Do not \nredesign, reorder, restyle, or restructure it between runs — only the \ndata inside it changes week to week.\n\n1. HEADER — navy banner, report title, then a lighter subtitle line \n   directly beneath it reading: \"🤖 Generated automatically by Mira — \n   Autonomous AI Reporting Agent\"\n\n2. STAT BAR — MUST be built as an HTML <table> with a single <tr> and \n   four <td> cells side by side (Total Cards / Completed / In Progress / \n   Blocked). Do NOT use inline-block or flexbox divs for this — they \n   collapse to vertical stacking in Gmail and Outlook. A <table> row is \n   the only layout method guaranteed to render horizontally across email \n   clients. Each stat count must be the number YOU calculated in Part 1, \n   never copied from a prior run.\n\n3. SECTION TABLES — one per non-empty bucket (Completed, In Progress, \n   Blocked, Archived/Other), each with:\n   - A navy uppercase section header with bottom border, prefixed with an \n     emoji matching the bucket (✅ Completed, 🔵 In Progress, 🔴 Blocked, \n     🗄️ Archived)\n   - A table with columns: Task | Owner | Due Date | Status\n   - Status shown as a colored pill/badge (rounded, padded span), matching \n     the stat bar's color coding: green for Completed, blue for In \n     Progress, red for Blocked\n   - Skip the entire section (header + table) if that bucket has zero cards\n\n4. RECOMMENDATIONS & RISK ASSESSMENT — a short paragraph in a highlighted \n   box, based only on patterns actually present in the data (e.g. overdue \n   dates, unassigned owners, a growing Blocked count week over week). If \n   there is genuinely nothing notable, state that plainly. Never speculate \n   about budget, scope, or risks not evidenced in the input data.\n\n5. FOOTER — a small, muted line: \"This report was generated and delivered \n   autonomously by Mira — no manual data entry or drafting involved.\"\n\nSTYLING RULES\n- All styles must be inline (style=\"...\" on each element) — no <style> \n  block or CSS classes, since many email clients strip <head> stylesheets\n- Color palette (do not deviate): navy #1B365D, green #137333 / #E6F4EA, \n  blue #1A73E8 / #E8F0FE, red #C5221F / #FCE8E6, neutral #F4F5F7\n- Rounded corners (4-6px) on stat cards and badges, consistent with prior \n  runs\n- Keep total structure under ~700px max-width, single column, mobile-safe\n\nTEMPERATURE / CONSISTENCY NOTE\nBecause structural drift between runs has been a known issue, treat the \nHTML skeleton above as fixed and non-negotiable. Only the data populating \nit — card names, owners, dates, counts, and the recommendations paragraph \n— should vary week to week.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -576,
+        -96
+      ],
+      "id": "13905fe9-c672-4981-bda0-74f570b47c91",
+      "name": "Mira-Weekly Reporting1"
+    },
+    {
+      "parameters": {
+        "url": "https://api.trello.com/1/boards/6a83e621a62bf7976b3b6d25",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "trelloApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "cards",
+              "value": "all"
+            },
+            {
+              "name": "lists",
+              "value": "all"
+            },
+            {
+              "name": "members",
+              "value": "all"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -1024,
+        -96
+      ],
+      "id": "b43cd14b-2091-43aa-bfe0-29a5c0de2d85",
+      "name": "Trello KANBAN  Card Extractor1",
+      "credentials": {
+        "trelloApi": {
+          "id": "y42zN7kprIVZ4KMr",
+          "name": "Trello account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "n8nrakesh@gmail.com",
+        "subject": "={{ \"[Weekly Status Report] ABCDE LTD. — AI Adoption Kanban (\" + $today.format('MM/dd/yyyy') + \")\" }}",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        -96
+      ],
+      "id": "74fca957-1f68-471c-b730-553760af11c6",
+      "name": "Send a message4",
+      "webhookId": "e0bd2b25-df3d-49fb-884b-64cd448cf675",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "R8z0An4OaxQ0mCXG",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "PDF",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Txt File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "XLSX File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "rtf->pdf",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XLSX File": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDF": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Txt File": {
+      "main": [
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Extract from File3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Mira-Project Planner",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Mira-Project Planner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Trello KANBAN  Card Extractor1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mira-Project Planner": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rtf->pdf": {
+      "main": [
+        [
+          {
+            "node": "Extract from File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Mira-Weekly Reporting1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KANBAN Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Mira-Weekly Reporting1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mira-Weekly Reporting1": {
+      "main": [
+        [
+          {
+            "node": "Send a message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trello KANBAN  Card Extractor1": {
+      "main": [
+        [
+          {
+            "node": "KANBAN Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "590f3c87-0882-43ff-8fd8-3bc22f659848",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "085709b2a40765edd2db36100d64513b5502d1516bb2c0eaa260206c0a16147d"
+  },
+  "nodeGroups": [],
+  "id": "XUYReGcwXYVPfUR9",
+  "tags": []
+}
