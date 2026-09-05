@@ -61,10 +61,4 @@ License
 Acknowledgements
 - Capstone / demo artifacts generated with the help of Claude / other generative tools (as noted in artifact filenames) and manual curation.
 
-—
-
-If you'd like, I can:
-- Update this README in the repository now (I will commit it),
-- Add a LICENSE file (which license do you prefer?),
-- Create a simple demo script or add example input files and link them into the README.
-
+If you'd like edits to the README wording or prefer a different structure (for example: split into README + docs/ directory), tell me which changes and I'll update it.
